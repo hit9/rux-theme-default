@@ -3,7 +3,7 @@
 @import base
 
 .post-html
-  font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif
+  // font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif
   // Base
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
@@ -117,6 +117,9 @@
     padding: 0
   ul :first-child, ol :first-child
     margin-top: 0
+
+  ul ul, ol ul
+    list-style-type: circle
 
   // Definition Lists
   dl
@@ -262,7 +265,7 @@
     border: 1px solid #eaeaea
     background-color: #f8f8f8
     border-radius: 3px
-    font-size: 13px
+    font-size: 14px
   pre code
     margin: 0
     padding: 0
@@ -270,21 +273,16 @@
     border: none
     background: transparent
   .highlight pre
-    background-color: #f8f8f8
-    border: 1px solid #ccc
-    font-size: 13px
+    background-color: #eee
+    font-size: 15px
     line-height: 19px
     overflow: auto
     padding: 6px 10px
-    border-radius: 3px
   pre
-    background-color: #f8f8f8
-    border: 1px solid #ccc
-    font-size: 13px
-    line-height: 19px
+    background-color: #eee
     overflow: auto
     padding: 6px 10px
-    border-radius: 3px
+    font: 15px/19px 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream VeraSans Mono', monospace
     code, tt
       background-color: transparent
       border: none
@@ -293,32 +291,5 @@
   p img
     margin: 10px auto
     display: block
-
-/* code highlighting*/
-
-.post-html code
-  margin: 0 2px
-  padding: 0px 5px
-  border: 1px solid #eaeaea
-  background-color: #f8f8f8
-
-.post-html code,.post-html pre
-  font: 15px/1.5 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream VeraSans Mono', monospace !important
-  @include border-radius(3px)
-  color: #000
-  text-shadow: none
-
-.post-html .highlight pre
-  background-color: #f8f8f8
-  border: 1px solid #ccc
-  padding: 6px 10px
-  overflow: auto
-
-
-.post-html .highlight pre code
-  border: none
-  background-color: transparent
-  margin: 0
-  padding: 0
 
 @import "pygments.css"
