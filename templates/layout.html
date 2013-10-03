@@ -11,17 +11,17 @@
     <!-- no cache -->
     <meta name="description" content="{%block meta_description%}{{blog.description}}{%endblock%}" />
     <title>{%block title%}{{blog.title}}{%endblock%}</title>
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v201310021714" type="text/css" />
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201310021714" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v201310031936" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201310031936" type="text/css" />
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h1><a href="/">{{blog.name}}</a></h1>
+        <h1><a href="/" title="{{blog.name}}">{{blog.name}}</a></h1>
         <h2>{{blog.description}}</h2>
         <p class="nav separator ">
         <span>
-          <a href="/">Index</a>
+          <a href="/" title="Index Page">Index</a>
         </span>
         </p>
       </div>
