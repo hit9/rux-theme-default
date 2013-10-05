@@ -22,6 +22,11 @@
         <p class="nav separator ">
         <span>
           <a href="/" title="Index Page">Index</a>
+          {% if config.links is defined %}
+            {% for link_name, link_value in config.links.iteritems() %}
+            ~ <a href="{{link_value}}" title="{{link_name}}">{{link_name}}</a>
+            {% endfor %}
+          {% endif %}
         </span>
         </p>
       </div>
