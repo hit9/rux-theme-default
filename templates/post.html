@@ -2,6 +2,12 @@
 {% block css_this_page %}post.css{% endblock %}
 {% block title %}{{post.title}}{% endblock %}
 {% block content %}
+  {% if post.title_pic %}
+  <div class="title-pic-container">
+    <img src="/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
+    <img src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
+  </div>
+  {% endif %}
   <h1 class="title">{{post.title}}</h1>
   <div class="post-html">
     {{post.html}}

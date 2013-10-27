@@ -15,27 +15,22 @@
     <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201310031936" type="text/css" />
   </head>
   <body>
-    <div class="container">
-      <div class="header">
+    <div class="header">
+      <div class="header-box">
         <h1><a href="/" title="{{blog.name}}">{{blog.name}}</a></h1>
         <h2>{{blog.description}}</h2>
-        <p class="nav separator ">
-        <span>
-          <a href="/" title="Index Page">Index</a>
-          {% if config.links is defined %}
-            {% for link_name, link_value in config.links.iteritems() %}
-            ~ <a href="{{link_value}}" title="{{link_name}}">{{link_name}}</a>
-            {% endfor %}
-          {% endif %}
-        </span>
-        </p>
       </div>
-      <p class="flourish">
-      <img src="/{{blog.theme}}/static/images/flourish.svg" height="60px">
-      </p>
+    </div>
+    <div class="container">
+      <div class="cut">* * *</div>
       <div class="content">
         {%block content%}
         {%endblock%}
+      </div>
+      <div class="aboutme">
+        <img src="https://secure.gravatar.com/avatar/{{author.gravatar_id}}?s=200" class="avatar" />
+          <strong>{{author.name}}</strong>
+          <p>{{author.description}}</p>
       </div>
       <div class="footer-push"></div>
     </div>

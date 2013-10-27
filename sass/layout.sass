@@ -29,6 +29,7 @@ html, body
 body
   font: 16px/1.48 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, Sans-serif
   background: #fff
+  // color: #414243
   color: #222
   font-weight: 400
 
@@ -49,7 +50,7 @@ a:visited
 .container
   width: $width
 
-.header, .content, .footer
+.header-box, .content, .footer
   width: $width
   margin: 0 auto
   text-align: center
@@ -58,24 +59,27 @@ a:visited
   text-align: left
 
 .header
-  padding-top: 60px
+  position: relative
+  border-bottom: 2px solid #dedddf
+  z-index: 10
+  width: 100%
+  padding: 60px 0 20px 0
+  box-shadow: 0 1px 2px rgba(0,0,0,.04),inset 0 1px 0 #fff
+  background-color: #fafbfc
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#fcfdfe),to(#f8f9fa))
+  background-image: -webkit-linear-gradient(top,#fcfdfe,#f8f9fa)
+  background-image: linear-gradient(top,#fcfdfe,#f8f9fa)
+  background-repeat: repeat-x
+
   h1
     a
-      +ofl-font(35px)
-      font-weight: 300
+      +ofl-font(43px)
+      font-weight: 200
+    margin: 0 0 15px 0
   h2
-    +ofl-font(17px)
+    +ofl-font(20px)
     font-style: italic
-    color: #333
-
-  p.nav
-    +ofl-font(21px)
-    margin-top: 25px
-    color: #000
-    font-weight: 300
-    a
-      margin: 0 10px
-
+    color: #777
 
 .footer
   width: $width
@@ -88,25 +92,6 @@ a:visited
     color: #999
     text-decoration: underline
 
-
-.separator
-  width: 100%
-  border-bottom: 1px dotted $red
-  text-align: center
-  height: 18px
-  margin-bottom: 15px
-
-.separator span
-  line-height: 20px
-  padding: 0 20px
-  background: white
-  display: inline-block
-  margin-top: 10px
-
-.flourish
-  text-align: center
-  margin: 60px 0
-
 .cut
   clear: both
   color: #aaa
@@ -115,3 +100,14 @@ a:visited
   margin: 15px 0
   font-size: 30px
   opacity: .6
+
+.aboutme
+  padding: 20px 0
+  border-top: 2px solid #dedddf
+  color: #42474a
+  img.avatar
+    +border-radius(50em)
+    width: 100px
+    height: 100px
+    float: left
+    margin-right: 20px
