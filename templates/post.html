@@ -5,7 +5,9 @@
   {% if post.title_pic %}
   <div class="title-pic-container">
     <img src="/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
-    <img src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
+    <a href="{{post.title_pic}}" title="{{post.title}}">
+      <img src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
+    </a>
   </div>
   {% endif %}
   <h1 class="title">{{post.title}}</h1>

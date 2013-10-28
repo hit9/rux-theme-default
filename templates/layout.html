@@ -29,9 +29,21 @@
       </div>
       <div class="aboutme">
         <img src="/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
-        <img src="https://secure.gravatar.com/avatar/{{author.gravatar_id}}?s=200" class="avatar" />
+        {% if author.url %}
+        <a href="{{author.url}}" title="{{author.name}}">
+          {% endif %}
+          <img src="https://secure.gravatar.com/avatar/{{author.gravatar_id}}?s=200" class="avatar" />
+          {% if author.url %}
+        </a>
+        {% endif %}
+        {% if author.url %}
+        <a href="{{author.url}}" title="{{author.name}}">
+          {% endif %}
           <strong>{{author.name}}</strong>
-          <p>{{author.description}}</p>
+          {% if author.url %}
+        </a>
+        {% endif %}
+        <p>{{author.description}}</p>
       </div>
       <div class="footer-push"></div>
     </div>
