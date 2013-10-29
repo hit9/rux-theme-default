@@ -11,8 +11,8 @@
     <!-- no cache -->
     <meta name="description" content="{%block meta_description%}{{blog.description}}{%endblock%}" />
     <title>{%block title%}{{blog.title}}{%endblock%}</title>
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v201310272228" type="text/css" />
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201310272228" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v20131029v001" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v20131029v001" type="text/css" />
   </head>
   <body>
     <div class="header">
@@ -32,7 +32,7 @@
         {% if author.url %}
         <a href="{{author.url}}" title="{{author.name}}">
           {% endif %}
-          <img src="https://secure.gravatar.com/avatar/{{author.gravatar_id}}?s=200" class="avatar" />
+          <img src="https://secure.gravatar.com/avatar/{{author.gravatar_id}}?s=100" class="avatar" />
           {% if author.url %}
         </a>
         {% endif %}

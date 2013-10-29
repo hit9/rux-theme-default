@@ -10,30 +10,29 @@ Page {{page.number}} | {{blog.name}}
 
 {% block content %}
 {% for post in page.posts %}
-<div class="post{% if post.title_pic %} post-with-title-pic {% else %} post-without-title-pic {% endif %}">
-  <h1 class="title">
-    <a class="title" href="/post/{{post.name}}.html" title="{{post.title}}" >{{post.title}}</a>
+<div class="item {% if post.title_pic %} item-p {% else %} item-no-p {% endif %}">
+  <div class="post{% if post.title_pic %} post-with-title-pic {% else %} post-without-title-pic {% endif %}">
+    <h1 class="title">
+      <a class="title" href="/post/{{post.name}}.html" title="{{post.title}}" >{{post.title}}</a>
+      <a class="date">{{post.datetime.strftime("%b  %d, %y")}}</a>
+    </h1>
     {% if post.title_pic %}
-    <a class="date">{{post.datetime.strftime("%b  %d, %y")}}</a>
+    <div class="title-pic-preview" style="background-image: url({{post.title_pic}});"></div>
+    <a href="/post/{{post.name}}.html" title="{{post.title}}" class="entry-link"></a>
+    <div class="spinner" style="background-image:url(/{{blog.theme}}/static/images/spinner-circle-fade.gif)"></div>
+    {% else %}
+    <div class="post-html summary">{{post.summary}}</div>
+    <p class="read-more"><a href="{{root_path}}/post/{{post.name}}.html" title="Read more"> ··· </a><p>
     {% endif %}
-  </h1>
-  {% if post.title_pic %}
-  <div class="title-pic-preview" style="background-image: url({{post.title_pic}});"></div>
-  <a href="/post/{{post.name}}.html" title="{{post.title}}" class="entry-link"></a>
-  <div class="spinner" style="background-image:url(/{{blog.theme}}/static/images/spinner-circle-fade.gif)"></div>
-  {% else %}
-  <div class="date">{{post.datetime.strftime("%b  %d, %y")}}</div>
-  <div class="post-html summary">{{post.summary}}</div>
-  <p class="read-more"><a href="{{root_path}}/post/{{post.name}}.html" title="Read more"> ··· </a><p>
-  {% endif %}
+  </div>
 </div>
 {% endfor %}
-<p class="paging">
+<div class="paging">
 {% if page.first == False %}
 <a class="prev" title="Previous Page" href="{%if page.number == 2%}/{%else%}{{root_path}}/page/{{page.number-1}}.html{%endif%}"> < </a>
 {%endif%}
 {% if page.last == False %}
 <a class="next" title="Next Page" href="/page/{{page.number+1}}.html"> > </a>
 {%endif%}
-</p>
+</div>
 {% endblock %}
