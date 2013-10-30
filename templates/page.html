@@ -1,4 +1,15 @@
 {% extends "layout.html" %}
+{% block header_extra %}
+<!-- lazyload background images-->
+<script src="/{{blog.theme}}/static/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/{{blog.theme}}/static/js/jquery.lazyload.background.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function () {
+      $("div.item div.title-pic-preview").lazyload({effect: 'fadeIn'});
+  });
+</script>
+<!-- end lazyload -->
+{% endblock %}
 {% block css_this_page %}page.css{% endblock %}
 {% block title %}
 {% if page.first%}
@@ -17,7 +28,7 @@ Page {{page.number}} | {{blog.name}}
       <a class="date">{{post.datetime.strftime("%b  %d, %y")}}</a>
     </h1>
     {% if post.title_pic %}
-    <div class="title-pic-preview" style="background-image: url({{post.title_pic}});"></div>
+    <div class="title-pic-preview" data-background="{{post.title_pic}}" ></div>
     <a href="/post/{{post.name}}.html" title="{{post.title}}" class="entry-link"></a>
     <div class="spinner" style="background-image:url(/{{blog.theme}}/static/images/spinner-circle-fade.gif)"></div>
     {% else %}
