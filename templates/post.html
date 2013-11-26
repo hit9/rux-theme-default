@@ -16,6 +16,21 @@
   </div>
   <p class="date">written on {{post.datetime.strftime("%b  %d, %y")}} </p>
 
+  <div class="posts-nav">
+   {% if post.prev %}
+   <a class="prev" href="/post/{{post.prev.name}}.html">
+      <i class="icon-arrow-left"></i>
+      <span>{{post.prev.title}}</span>
+   </a>
+   {% endif %}
+   {% if post.next %}
+   <a class="next" href="/post/{{post.next.name}}.html">
+       <span>{{post.next.name}}</span>
+       <i class="icon-arrow-right"></i>
+   </a>
+   {% endif %}
+ </div>
+
   {% if config.disqus.enable %}
     <!-- Disqus Begin-->
     <div id="disqus_thread"></div>
