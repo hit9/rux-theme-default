@@ -4,9 +4,9 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{blog.name}}</title>
     <style type="text/css" media="all">
-      .cut {
-        page-break-after: always;
-      }
+      /* .cut { */
+      /*   page-break-after: always; */
+      /* } */
       {# Due to wkhtmltopdf, font from google can only load this way :( #}
       @font-face {
         font-family: 'Source Sans Pro';
@@ -26,6 +26,11 @@
         font-weight: 400;
         src: url('{{BLOG_ABS_PATH}}/{{blog.theme}}/static/fonts/OFLGoudyStMTT-Italic.ttf' ) format('truetype');
       }
+
+      img {
+        page-break-inside: avoid !important;
+      }
+
     </style>
     {# Due to wkhtmltopdf, this path should be absolute #}
     <link rel="stylesheet" href="{{BLOG_ABS_PATH}}/{{blog.theme}}/static/css/pdf.css" type="text/css" media="all"/>
@@ -37,8 +42,8 @@
         <h1 class="title">{{post.title}}</h1>
         <p class="date">{{post.datetime.strftime("%b  %d, %y")}} </p>
         {% if post.title_pic %}
-          <div class="title-pic-container">
-            <img src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
+          <div class="title-pic-container" style="position: relative">
+            <img style="position:relative" src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
           </div>
         {% endif %}
         <div class="post-html">
