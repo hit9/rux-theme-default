@@ -57,3 +57,13 @@
     </div>
   </body>
 </html>
+<script>
+  var c = new XMLHttpRequest();
+  c.open('GET', '/{{blog.theme}}/static/art.txt');
+  c.onreadystatechange = function() {
+    console.log(c.responseText);
+    console.log('为记录我与铷铷的爱情而生的博客系统!');
+    console.log('                -- Chao Wang (hit9)');
+  }
+  c.send();
+</script>
