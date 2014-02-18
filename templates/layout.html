@@ -11,8 +11,8 @@
     <!-- no cache -->
     <meta name="description" content="{%block meta_description%}{{blog.description}}{%endblock%}" />
     <title>{%block title%}{{blog.name}}{%endblock%}</title>
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v20131029v001" type="text/css" />
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v20131029v001" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v201402181631" type="text/css" />
+    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201402181631" type="text/css" />
     <link rel="shortcut icon" href="/{{blog.theme}}/static/images/favicon.ico">
     {% block header_extra %}
     {% endblock %}
@@ -56,6 +56,9 @@
       <a href="mailto:{{author.email}}">{{author.name}}</a> |
       site built by <a href="https://github.com/hit9/rux.git">hit9/rux.git</a>
     </div>
+    <!-- InstantClick  -->
+    <script src="/{{blog.theme}}/static/js/instantclick.min.js" data-no-instant></script>
+    <script data-no-instant>InstantClick.init();</script>
   </body>
 </html>
 <script>
