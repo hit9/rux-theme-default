@@ -4,7 +4,7 @@
 {% block content %}
   {% if post.title_pic %}
   <div class="title-pic-container">
-    <img src="/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
+    <img src="{{root}}/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
     <a href="{{post.title_pic}}" title="{{post.title}}">
       <img src="{{post.title_pic}}" alt="{{post.title}}" class="title-pic"/>
     </a>
@@ -18,13 +18,13 @@
 
   <div class="posts-nav">
    {% if post.prev %}
-   <a class="prev" href="/post/{{post.prev.name}}.html">
+   <a class="prev" href="{{root}}/post/{{post.prev.name}}.html">
       <i class="icon-arrow-left"></i>
       <span>{{post.prev.title}}</span>
    </a>
    {% endif %}
    {% if post.next %}
-   <a class="next" href="/post/{{post.next.name}}.html">
+   <a class="next" href="{{root}}/post/{{post.next.name}}.html">
        <span>{{post.next.title}}</span>
        <i class="icon-arrow-right"></i>
    </a>

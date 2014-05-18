@@ -11,16 +11,16 @@
     <!-- no cache -->
     <meta name="description" content="{%block meta_description%}{{blog.description}}{%endblock%}" />
     <title>{%block title%}{{blog.name}}{%endblock%}</title>
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/layout.css?v201402181631" type="text/css" />
-    <link rel="stylesheet" href="/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201402181631" type="text/css" />
-    <link rel="shortcut icon" href="/{{blog.theme}}/static/images/favicon.ico">
+    <link rel="stylesheet" href="{{root}}/{{blog.theme}}/static/css/layout.css?v201402181631" type="text/css" />
+    <link rel="stylesheet" href="{{root}}/{{blog.theme}}/static/css/{%block css_this_page%}{%endblock%}?v201402181631" type="text/css" />
+    <link rel="shortcut icon" href="{{root}}/{{blog.theme}}/static/images/favicon.ico">
     {% block header_extra %}
     {% endblock %}
   </head>
   <body>
     <div class="header">
       <div class="header-box">
-        <h1><a href="/" title="{{blog.name}}">{{blog.name}}</a></h1>
+        <h1><a href="{{root}}/" title="{{blog.name}}">{{blog.name}}</a></h1>
         <h2>{{blog.description}}</h2>
       </div>
     </div>
@@ -31,7 +31,7 @@
         {%endblock%}
       </div>
       <div class="aboutme">
-        <img src="/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
+        <img src="{{root}}/{{blog.theme}}/static/images/spinner-circle-fade.gif" class="loader"/>
         {% if author.url %}
         <a href="{{author.url}}" title="{{author.name}}">
           {% endif %}
@@ -60,7 +60,7 @@
 </html>
 <script>
   var c = new XMLHttpRequest();
-  c.open('GET', '/{{blog.theme}}/static/art.txt');
+  c.open('GET', '{{root}}/{{blog.theme}}/static/art.txt');
   c.onreadystatechange = function() {
     console.log(c.responseText);
     console.log('为记录我与铷铷的爱情而生的博客系统!');
