@@ -19,3 +19,8 @@ git submodule add git://github.com/hit9/rux-theme-default.git default
 ```
 
 set `theme` to `default` in your `config.toml`
+
+Snapshot
+--------
+
+![](screenshot.png)
