@@ -1,5 +1,23 @@
 @charset "utf-8"
 
+@font-face
+  font-family: 'Source Sans Pro'
+  font-style: normal
+  font-weight: 400
+  src: local('Source Sans Pro'), url(../fonts/SourceSansPro-Regular.woff) format('woff')
+
+@font-face
+  font-family: 'OFL Sorts Mill Goudy TT'
+  font-style: normal
+  font-weight: 400
+  src: local('OFL Sorts Mill Goudy TT'), url(../fonts/OFLGoudyStMTT.woff) format('woff')
+
+@font-face
+  font-family: 'OFL Sorts Mill Goudy TT Italic'
+  font-style: italic
+  font-weight: 400
+  src: local('OFL Sorts Mill Goudy Italic TT'), url(../fonts/OFLGoudyStMTT-Italic.woff) format('woff')
+
 $red: #CC0033
 $gray: #777
 $black: #292928
@@ -14,8 +32,15 @@ $width: 600px
   border-radius: $r
 
 =ofl-font($font-size: 17px)
-  font: $font-size 'OFL Sorts Mill Goudy', 'OFL Sorts Mill Goudy TT', serif
+  font-family: 'OFL Sorts Mill Goudy TT', serif
+  font-size: $font-size 
   font-weight: 200
+
+=ofl-font-italic($font-size: 15px)
+  font-family: 'OFL Sorts Mill Goudy TT Italic', serif
+  font-size: $font-size 
+  font-weight: 200
+  font-style: italic
 
 =bigtitle
   +ofl-font(27px)

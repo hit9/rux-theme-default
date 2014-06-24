@@ -1,6 +1,12 @@
-@import base
 @import normalize
+@import base
 @import markdown
+
+$width: 93%
+$black: #111111
+
+html, background
+  background-color: #fdfdfd
 
 body
   font: 15px/1.7 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, Sans-serif
@@ -42,13 +48,11 @@ a:visited
     +ofl-font(27px)
     text-align: center
     display: block
-    margin: 40px 0 24px
-    font-weight: 600
+    margin: 40px 0 15px
   p.date
-    +ofl-font(15px)
-    font-style: italic
+    +ofl-font-italic(15px)
     text-align: center
-    margin: 5px 0 30px 0
+    margin: 5px 0 20px 0
   div.title-pic-container, img.title-pic
-    width: $width
+    width: 100%
     text-align: center
